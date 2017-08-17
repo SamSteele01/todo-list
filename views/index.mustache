@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Todo list</title>
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- TODO write your HTML/Mustache here -->
+          <h1>Todo list</h1>
+          <form class="" action="/" method="post">
+            <input type="text" id="add-todo" name="addTodo" placeholder="Add a todo..." >
+            <button type="submit" for="addTodo">Add todo</button>
+          </form>
+          <ul class="todo-list">
+            {{#todoArray}}
+              <form class="" action="/mark" method="post" value="{{.}}">
+                <p><button type="click" name="">Mark as complete</button>
+                <input type="text" name="complete" value="{{.}}" readonly></p>
+              </form>
+            {{/todoArray}}
+            <h2>Completed tasks</h2>
+              {{#completeArray}}
+                <p>{{.}}</p>
+              {{/completeArray}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<!-- Latest compiled and minified JavaScript -->
